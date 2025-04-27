@@ -1,4 +1,3 @@
-// Handle form submission for creating a new incident
 document.getElementById('incidentForm').addEventListener('submit', function (e) {
     e.preventDefault();
   
@@ -6,16 +5,14 @@ document.getElementById('incidentForm').addEventListener('submit', function (e) 
     const description = document.getElementById('description').value;
     const severity = document.getElementById('severity').value;
   
-    // Validate that description and severity are not empty
     if (!description || !severity) {
-      document.getElementById('errorMessage').style.display = 'block';  // Show error message
+      document.getElementById('errorMessage').style.display = 'block';
       document.getElementById('errorMessage').textContent = 'Description and Severity are required!';
-      return;  // Stop the form submission
+      return;  
     } else {
-      document.getElementById('errorMessage').style.display = 'none';  // Hide error message if valid
+      document.getElementById('errorMessage').style.display = 'none'; 
     }
   
-    // Ensure severity is valid
     const validSeverities = ['Low', 'Medium', 'High'];
     if (!validSeverities.includes(severity)) {
       document.getElementById('errorMessage').style.display = 'block';
@@ -23,14 +20,12 @@ document.getElementById('incidentForm').addEventListener('submit', function (e) 
       return;
     }
   
-    // Create the new incident object
     const newIncident = {
       title: title,
       description: description,
       severity: severity
     };
   
-    // Send POST request to backend to create a new incident
     fetch('http://localhost:5000/incidents', {
       method: 'POST',
       headers: {
@@ -41,14 +36,12 @@ document.getElementById('incidentForm').addEventListener('submit', function (e) 
     .then(response => response.json())
     .then(data => {
       alert('Incident Added!');
-      loadIncidents();  // Reload incidents list
-    })
+      loadIncidents();     })
     .catch(error => {
       console.error('Error:', error);
     });
   });
   
-  // Function to load incidents from the backend
   function loadIncidents() {
     fetch('http://localhost:5000/incidents')
       .then(response => response.json())
@@ -71,7 +64,6 @@ document.getElementById('incidentForm').addEventListener('submit', function (e) 
       .catch(error => console.error('Error fetching incidents:', error));
   }
   
-  // Function to view an incident by ID
   function viewIncident(id) {
     fetch(`http://localhost:5000/incidents/${id}`)
       .then(response => response.json())
@@ -87,7 +79,6 @@ document.getElementById('incidentForm').addEventListener('submit', function (e) 
       });
   }
   
-  // Function to delete an incident
   function deleteIncident(id) {
     fetch(`http://localhost:5000/incidents/${id}`, {
       method: 'DELETE'
@@ -95,17 +86,15 @@ document.getElementById('incidentForm').addEventListener('submit', function (e) 
     .then(response => response.json())
     .then(data => {
       alert('Incident Deleted!');
-      loadIncidents();  // Reload incidents list
+      loadIncidents();  
     })
     .catch(error => console.error('Error deleting incident:', error));
   }
   
-  // Function to go back to the incident list
   function goBack() {
     document.getElementById('incidentDetails').style.display = 'none';
     document.getElementById('incidentList').style.display = 'block';
   }
   
-  // Load incidents on page load
   loadIncidents();
   

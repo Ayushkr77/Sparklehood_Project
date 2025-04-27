@@ -11,7 +11,6 @@
   <div class="container">
     <h1>Incident Log</h1>
 
-    <!-- Form for adding new incidents -->
     <form id="incidentForm">
       <input type="text" id="title" placeholder="Incident Title" required />
       <textarea id="description" placeholder="Incident Description" required></textarea>
@@ -24,16 +23,13 @@
       <button type="submit">Add Incident</button>
     </form>
 
-    <!-- Error message -->
     <div id="errorMessage" style="color: red; display: none;">Please fill in all the fields.</div>
 
-    <!-- Section for displaying incidents -->
     <div id="incidentList">
       <h2>Incident List</h2>
       <div id="incidentContainer"></div>
     </div>
 
-    <!-- Section for displaying single incident details -->
     <div id="incidentDetails" class="incident-view" style="display: none;">
       <h2>Incident Details</h2>
       <p><strong>Title:</strong> <span id="incidentTitle"></span></p>
