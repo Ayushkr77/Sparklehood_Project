@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incident Log</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Incident Log</h1>
+
+    <!-- Form for adding new incidents -->
+    <form id="incidentForm">
+      <input type="text" id="title" placeholder="Incident Title" required />
+      <textarea id="description" placeholder="Incident Description" required></textarea>
+      <select id="severity">
+        <option value="" disabled selected>Select Severity</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <button type="submit">Add Incident</button>
+    </form>
+
+    <!-- Error message -->
+    <div id="errorMessage" style="color: red; display: none;">Please fill in all the fields.</div>
+
+    <!-- Section for displaying incidents -->
+    <div id="incidentList">
+      <h2>Incident List</h2>
+      <div id="incidentContainer"></div>
+    </div>
+
+    <!-- Section for displaying single incident details -->
+    <div id="incidentDetails" class="incident-view" style="display: none;">
+      <h2>Incident Details</h2>
+      <p><strong>Title:</strong> <span id="incidentTitle"></span></p>
+      <p><strong>Description:</strong> <span id="incidentDescription"></span></p>
+      <p><strong>Severity:</strong> <span id="incidentSeverity"></span></p>
+      <button onclick="goBack()">Go Back</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

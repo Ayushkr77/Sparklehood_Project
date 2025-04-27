@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input,
+select,
+textarea {
+    padding: 12px;
+    margin: 8px 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+button {
+    padding: 12px 20px;
+    margin-top: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.incident {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.incident h3 {
+    color: #333;
+}
+
+.incident p {
+    font-size: 16px;
+}
+
+.incident button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.incident button:hover {
+    background-color: #d32f2f;
+}
+
+.incident-view {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #4caf50;
+    color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.incident-view h2 {
+    color: white;
+}
+
+#errorMessage {
+    color: red;
+    display: none;
+}
+
+#incidentContainer {
+    margin-top: 20px;
+}
+
+/* New styles for the buttons */
+.incident button.view {
+    background-color: #007bff; /* Blue color for view button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.incident button.view:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.incident button.delete {
+    background-color: #f44336; /* Red color for delete button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.incident button.delete:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
